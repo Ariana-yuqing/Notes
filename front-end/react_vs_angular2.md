@@ -14,5 +14,9 @@ TypeScript:
 - Type correctness does not guarantee program correctness.TypeScript can only detect a class of bugs, however, it would increase the code complexity.
 - Type inference 
 - Might increase productiveness for some developer, but it takes time and effort to set it up.
-Dependency injection(write a function that takes your dependency, instead of importing your dependencies)
+
+Dependency injection
+- Write a function that takes your dependency, instead of importing your dependencies
+- In practice, what you end up with in Angular 2 is that instead of mocking just a handful of things that actually need mocking (network access, disk access, timers), you end up mocking a whole lot of stuff that should be black-boxed implementation details.
+
 
