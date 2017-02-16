@@ -132,10 +132,38 @@ class SearchFunctions(val query: String) {
 
 - count(), returns a count of the elements, and countByValue() returns a map of each unique value to its count. 
 
+## Working with Key/Value Pairs
 
+### Creating Pair RDDs
 
+   When creating a pair RDD from an in-memory collection in Scala and Python, we only need to call SparkContext.parallelize() on a collection of pairs.
 
+### Transformations on Pair RDDs
 
+   Pair RDDs are allowed to use all the transformations available to standard RDDs. Since pair RDDs contain tuples, we need to pass functions that operate on tuples rather than on indi‐ vidual elements. 
+   ```scala
+   pairs.filter{case (key, value) => value.length < 20}
+   // map{case (x, y): (x, func(y))}
+   ```
+
+#### Aggregations
+   Todo
+
+#### Grouping Data
+
+#### Joins
+
+#### Sorting Data
+
+### Actions Available on Pair RDDs
+
+- countByKey(), Count the number of elements for each key.
+
+- collectAsMap(), Collect the result as a map to provide easy lookup.
+
+- lookup(key), Return all values associated with the  provided key.
+
+### Data Partitioning (Advanced)
 
 
 
